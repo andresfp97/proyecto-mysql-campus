@@ -1,3 +1,4 @@
+
 use parque_natural;
 
 insert into entidad_responsable (id, nombre) values
@@ -271,7 +272,6 @@ insert into parque_area (id_parque, id_area, extension) values
 (49, 7, 10395),
 (50, 18, 4378);
 
--- insercion de especie 
 insert into especie (id, nombre_cientifico, nombre_vulgar, tipo) values
 -- 🌿 Especies Vegetales
 (1, 'Espeletia grandiflora', 'Frailejón', 'vegetal'),
@@ -609,7 +609,7 @@ insert into empleado (id, cedula, nombre, direccion, celular, sueldo, tipo) valu
 (97, 24487284, 'Fernando Rodríguez Moreno', 'Calle 90 # 23-2, Barrio San Fernando, Santander', '3232058657', 3829028, '004'),
 (98, 42378685, 'Ana Díaz Martínez', 'Calle 80 # 39-5, Barrio Santa Bárbara, Chocó', '3277000083', 5101765, '004'),
 (99, 56672429, 'Carlos Ríos Romero', 'Calle 67 # 42-28, Barrio Chapinero, Guainía', '3845779623', 5441333, '004'),
-(100, 96111256, 'Ana López Gómez', 'Calle 126 # 34-30, Barrio Ciudad Jardín, Magdalena', '3326655326', 4220207, '004');
+(100, 96111256, 'Ana López Gómez', 'Calle 126 # 34-30, Barrio Ciudad Jardín, Magdalena', '3326655326', 4220207, '004'),
 (101, 63154663, 'Carlos Díaz Moreno', 'Calle 135 # 75-5, Barrio Santa Bárbara, Guaviare', '3385788489', 5482202, '004'),
 (102, 23570002, 'Ana Díaz Díaz', 'Calle 23 # 11-12, Barrio La Candelaria, Caquetá', '3774159197', 5379211, '004'),
 (103, 95341734, 'Andrés Ríos Gómez', 'Calle 69 # 39-17, Barrio Los Alcázares, San Andrés', '3889412150', 5359001, '004'),
@@ -790,7 +790,6 @@ insert into vehiculo (id, tipo, marca, id_empleado) values
 (66, 'Cuatrimoto', 'BRP', 58),
 (67, 'Motocicleta', 'Honda', 59),
 (68, 'Dron', 'DJI', 60);
-
 
 
 -- inserciones de visitantes 
@@ -1247,8 +1246,6 @@ insert into visitante_alojamiento (id_visitante, id_alojamiento, fecha) values
 (16, 57, '2020-06-10');
 
 
-
-SELECT id FROM area ORDER BY id;
 -- inserciones de  conservacion area
 insert into conservacion_area (id_empleado, id_area, especialidad) values
 (73, 1, 'Limpieza de ecosistemas'),
