@@ -13,13 +13,11 @@ create table departamento (
     foreign key (id_entidad_responsable) references entidad_responsable(id) on delete cascade
 );
 
-
 create table parque (
     id int primary key auto_increment,
     nombre varchar(100) not null,
     fecha_declaracion date not null
 );
-
 
 create table departamento_parque (
     id_departamento int not null,
@@ -30,9 +28,9 @@ create table departamento_parque (
 );
 
 create table area (
-    id int primary key,
+    id int primary key auto_increment,
     nombre varchar(100) not null
-  );
+);
 
 create table parque_area (
     id_parque int,
@@ -44,7 +42,7 @@ create table parque_area (
 );
 
 create table empleado (
-    id integer primary key,
+    id int primary key auto_increment,
     cedula varchar(50) unique not null,
     nombre varchar(100) not null,
     direccion varchar(100) not null,
@@ -105,16 +103,16 @@ create table visitante_alojamiento (
 );
 
 create table especie (
-    id integer primary key,
+    id int primary key auto_increment,
     nombre_cientifico varchar(100) not null,
     nombre_vulgar varchar(100) not null,
     tipo enum('vegetal', 'animal', 'mineral') not null
 );
 
 create table especie_area (
-    id_especie integer not null,
-    id_area integer not null,
-    cantidad integer not null,
+    id_especie int not null,
+    id_area int not null,
+    cantidad int not null,
     primary key (id_especie, id_area),
     foreign key (id_especie) references especie(id) on delete cascade,
     foreign key (id_area) references area(id) on delete cascade
@@ -138,9 +136,9 @@ create table proyecto_especie (
 );
 
 create table investigador_proyecto (
+    id int primary key auto_increment,
     id_proyecto int,
     id_empleado int,
-    primary key (id_proyecto, id_empleado),
     foreign key (id_proyecto) references proyecto_investigacion(id),
     foreign key (id_empleado) references empleado(id)
 );
